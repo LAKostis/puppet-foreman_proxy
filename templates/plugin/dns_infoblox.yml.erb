@@ -2,6 +2,6 @@
 :dns_server: "<%= scope.lookupvar('::foreman_proxy::plugin::dns::infoblox::dns_server') %>"
 :dns_username: "<%= scope.lookupvar('::foreman_proxy::plugin::dns::infoblox::username') %>"
 :dns_password: "<%= scope.lookupvar('::foreman_proxy::plugin::dns::infoblox::password') %>"
-<% unless [nil, :undefined, :undef, ''].include?(scope.lookupvar("::foreman_proxy::plugins::dns::infoblox::dns_view")) -%>
-:dns_view: "<%= scope.lookupvar('::foreman_proxy::plugins::dns::infoblox::dns_view') %>"
+<% unless [nil, :undefined, :undef, ''].include?(scope.lookupvar("::foreman_proxy::plugin::dns::infoblox::dns_view")) -%>
+:dns_view: <%= scope.lookupvar("::foreman_proxy::plugin::dns::infoblox::dns_view") %>"
 <% end -%>
