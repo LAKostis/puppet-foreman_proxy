@@ -14,6 +14,7 @@ class foreman_proxy::plugin::dns::infoblox (
   String $dns_server = $::foreman_proxy::plugin::dns::infoblox::params::dns_server,
   String $username = $::foreman_proxy::plugin::dns::infoblox::params::username,
   String $password = $::foreman_proxy::plugin::dns::infoblox::params::password,
+  Optional[String] $dns_view = $::foreman_proxy::plugin::dns::infoblox::params::dns_view,
 ) inherits foreman_proxy::plugin::dns::infoblox::params {
   foreman_proxy::plugin { 'dns_infoblox':
   }
