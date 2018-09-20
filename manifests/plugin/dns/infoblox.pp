@@ -10,11 +10,16 @@
 #
 # $password::   The password of the Infoblox user
 #
+# $dns_view::   The DNS view on Infoblox server
+#
+# $infoblox_host:: Host to send API requests if differ from DNS
+#
 class foreman_proxy::plugin::dns::infoblox (
   String $dns_server = $::foreman_proxy::plugin::dns::infoblox::params::dns_server,
   String $username = $::foreman_proxy::plugin::dns::infoblox::params::username,
   String $password = $::foreman_proxy::plugin::dns::infoblox::params::password,
   Optional[String] $dns_view = $::foreman_proxy::plugin::dns::infoblox::params::dns_view,
+  Optional[String] $infoblox_host = $::foreman_proxy::plugin::dns::infoblox::params::infoblox_host,
 ) inherits foreman_proxy::plugin::dns::infoblox::params {
   foreman_proxy::plugin { 'dns_infoblox':
   }
